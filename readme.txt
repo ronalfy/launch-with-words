@@ -3,7 +3,7 @@
 Contributors: bridgetwillard
 Tags: blogging, content marketing, content, writing, copywriting
 Requires at least: 6.7
-Tested up to: 7.1
+Tested up to: 7.2
 Stable tag: 1.2.0
 Requires PHP: 7.4
 License: GPLv2 or later
@@ -29,7 +29,7 @@ You've worked hard to launch their site with words, so why not continue that hab
 
 <h3>Do I Need Anything Else?</h3>
 
-Yes. Launch With Words is a JSON importer. Head over to <a href="https://bridgetwillard.com/downloads/launch-with-words-starter-content-pack/">the Starter Content Pack</a> to grab that JSON file.
+Yes. Launch With Words is a JSON importer. Head over to <a href="https://launchwithwords.com/">the Starter Content Pack</a> to grab that JSON file.
 
 Launch With Words installs this JSON file. It is a year's worth of blog post prompts -- as drafts -- to encourage your clients to write and guides them in blogging best practices. Just say no to lorem i-sum, or placeholder text in the blogs. Hello World? No thanks. 
 
@@ -38,7 +38,7 @@ These prompts are based upon the small business ebook, "If You Don't Mind Your B
 <h3>Features and Tips</h3>
 
 <ul>
-<li>Download the Free Starter Content Pack for <a href="https://bridgetwillard.com/downloads/launch-with-words-starter-content-pack/">Launch With Words</a></li>
+<li>Download the Free Starter Content Pack for <a href="https://launchwithwords.com/">Launch With Words</a></li>
 <li>Encourage your clients to publish monthly.</li>
 <li>Compatible with the Block Editor.</li>
 <li>No need for placeholder blog posts.</li>
@@ -49,11 +49,11 @@ Install the plugin. Activate it. Import a content pack. Deactivate the plugin. D
 
 <h3>German Starter Pack is Also Available</h3>
 
-Das deutsche Starter Pack ist verfügbar. <a href="https://bridgetwillard.com/downloads/starter-content-pack-in-german/">Dieser Download</a> enthält die neueste Version des Importers sowie die Prompts json-Datei und den PDF-Willkommensbrief -- in Deutsch.
+Das deutsche Starter Pack ist verfügbar. <a href="https://launchwithwords.com/shop/">Dieser Download</a> enthält die neueste Version des Importers sowie die Prompts json-Datei und den PDF-Willkommensbrief -- in Deutsch.
 
-Launch With Words befindet sich auch im Plugin Directory. Sie benötigen noch die <a href="https://bridgetwillard.com/downloads/starter-content-pack-in-german/">json-Importdatei von mir auf meiner Seite</a>.
+Launch With Words befindet sich auch im Plugin Directory. Sie benötigen noch die <a href="https://launchwithwords.com/shop/">json-Importdatei von mir auf meiner Seite</a>.
 
-If you have a feature request, <a href="https://github.com/MediaRon/launch-with-words/issues">please add a GitHub issue</a>. Thank you!
+If you have a feature request, <a href="https://github.com/ronalfy/launch-with-words/issues">please add a GitHub issue</a>. Thank you!
 
 We would love it if you would take the time to <a href="https://wordpress.org/support/plugin/launch-with-words/reviews/#new-post">Rate the Plugin</a>. Please and thank you.
 
@@ -66,7 +66,11 @@ We would love it if you would take the time to <a href="https://wordpress.org/su
 
 = Is Launch With Words Free? =
 
-Of course. To get started, <a href="https://bridgetwillard.com/downloads/launch-with-words-starter-content-pack/">download the free Starter Content Pack</a> with the blog prompts. Premium Content Packs will be available soon on bridgetwillard.com.
+Of course. To get started, <a href="https://launchwithwords.com/shop/">download the free Starter Content Pack</a> with the blog prompts. Premium Content Packs will be available soon on bridgetwillard.com.
+
+= How can I report security bugs? =
+
+You can report security bugs through the Patchstack Vulnerability Disclosure Program. The Patchstack team help validate, triage and handle any security vulnerabilities. [Report a security vulnerability.]( https://patchstack.com/database/vdp/f8ec0ca2-03a6-4467-a4fe-e89d73ed8f6c )
 
 == Screenshots ==
 
