@@ -7,8 +7,8 @@
 
 namespace LWW\Includes;
 
-use LWW\Includes\Settings_Page as Settings_Page;
-use LWW\Includes\Functions as Functions;
+use LWW\Includes\Settings_Page;
+use LWW\Includes\Functions;
 
 /**
  * Plugin sub-menus and helper methods.
@@ -24,13 +24,24 @@ class Register_Menu {
 	}
 
 	/**
-	 * Redirects settings page to the post settings page.
+	 * Redirect the legacy Settings screen to the Posts import screen.
+	 *
+	 * The page query argument is only used to recognize the old menu slug.
+	 * No data is saved, so this redirect does not use a nonce.
 	 */
 	public function maybe_redirect_posts_page() {
-		if ( isset( $_GET['page'] ) && 'launch-with-words-options' === $_GET['page'] ) {
-			wp_safe_redirect( esc_url( Functions::get_settings_url() ) );
-			exit;
+		if ( wp_doing_ajax() || wp_doing_cron() || is_network_admin() || ! current_user_can( 'manage_options' ) ) {
+			return;
 		}
+
+		// phpcs:ignore WordPress.Security.NonceVerification.Recommended -- Fixed-slug redirect. No data is saved.
+		$page = isset( $_GET['page'] ) ? wp_unslash( $_GET['page'] ) : '';
+		if ( ! is_string( $page ) || 'launch-with-words-options' !== sanitize_key( $page ) ) {
+			return;
+		}
+
+		wp_safe_redirect( Functions::get_settings_url() );
+		exit;
 	}
 
 	/**

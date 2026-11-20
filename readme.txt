@@ -2,10 +2,10 @@
 === Small Business Copywriting Plugin - Launch With Words ===
 Contributors: bridgetwillard
 Tags: blogging, content marketing, content, writing, copywriting
-Requires at least: 5.1
-Tested up to: 6.7
-Stable tag: 1.1.2
-Requires PHP: 5.6
+Requires at least: 6.7
+Tested up to: 7.1
+Stable tag: 1.2.0
+Requires PHP: 7.4
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -78,6 +78,13 @@ Of course. To get started, <a href="https://bridgetwillard.com/downloads/launch-
 
 == Changelog ==
 
+= 1.2.0 =
+* Released 2026-11-20
+* Security release. Sanitize imported content packs and validate the uploaded JSON file before creating drafts.
+* Requires WordPress 6.7. Tested with WordPress 7.1.
+* Requires PHP 7.4, and runs on PHP 8.4.
+* Read content packs with wp_json_file_decode().
+
 = 1.1.2 =
 * Released 2023-08-24
 * Ensuring compatibility with WP 6.3
@@ -121,6 +128,9 @@ Of course. To get started, <a href="https://bridgetwillard.com/downloads/launch-
 * Initial release on WordPress.org
 
 == Upgrade Notice ==
+
+= 1.2.0 =
+Security release. Requires WordPress 6.7 and PHP 7.4 or newer, including PHP 8.4. Sanitizes imported content packs before creating drafts.
 
 = 1.1.2 =
 Testing with 6.3 successfully.

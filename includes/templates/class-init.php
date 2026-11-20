@@ -7,7 +7,7 @@
 
 namespace LWW\Includes\Templates;
 
-use LWW\Includes\Functions as Functions;
+use LWW\Includes\Functions;
 
 /**
  * Init all the classes and sub-tabs.

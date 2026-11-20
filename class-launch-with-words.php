@@ -9,17 +9,16 @@ namespace LWW;
 
 /**
  * Plugin Name:       Launch With Words
- * Plugin URI:        https://bridgetwillard.com/launch-with-words/
+ * Plugin URI:        https://launchwithwords.com/
  * Description:       Launch With Words installs a year's worth of blog post prompts to encourage and guide your client in blogging best practices -- not lorem ipsum or bacon ipsum or other placeholder text.
- * Version:           1.1.2
- * Requires at least: 5.1
- * Requires PHP:      5.6
- * Author:            MediaRon LLC
- * Author URI:        https://mediaron.com
+ * Version:           1.2.0
+ * Requires at least: 6.7
+ * Requires PHP:      7.4
+ * Author:            Ronald Huereca
+ * Author URI:        https://ronaldh.com
  * License:           GPL v2 or later
  * License URI:       https://www.gnu.org/licenses/gpl-2.0.html
  * Text Domain:       launch-with-words
- * Domain Path:       /languages
  */
 
 // Exit if accessed directly.
@@ -31,12 +30,33 @@ if ( ! defined( 'ABSPATH' ) ) {
 require_once 'autoloader.php';
 
 define( 'LWW_FILE', __FILE__ );
-define( 'LWW_VERSION', '1.1.2' );
+define( 'LWW_VERSION', '1.2.0' );
 
 /**
  * The plugin base class.
  */
 class Launch_With_Words {
+
+	/**
+	 * Import menu.
+	 *
+	 * @var \LWW\Includes\Register_Menu
+	 */
+	private $import_menu;
+
+	/**
+	 * Plugin settings links.
+	 *
+	 * @var \LWW\Includes\Plugin_Settings_Links
+	 */
+	private $plugin_settings;
+
+	/**
+	 * Admin tabs.
+	 *
+	 * @var \LWW\Includes\Templates\Init
+	 */
+	private $tabs;
 
 	/**
 	 * Launch With Words instance.
@@ -60,18 +80,6 @@ class Launch_With_Words {
 	 */
 	private function __construct() {
 		add_action( 'plugins_loaded', array( $this, 'plugins_loaded' ), 20 );
-		add_action( 'init', array( $this, 'init' ) );
-	}
-
-	/**
-	 * Fired when the init action for WordPress is triggered.
-	 */
-	public function init() {
-		load_plugin_textdomain(
-			'launch-with-words',
-			false,
-			dirname( plugin_basename( LWW_FILE ) ) . '/languages/'
-		);
 	}
 
 	/**
