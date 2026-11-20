@@ -1,4 +1,4 @@
-![Launch With Words](<https://bridgetwillard.com/wp-content/uploads/2021/01/launch-with-words-landing-page.png >)
+<img width="270" height="270" alt="image" src="https://github.com/user-attachments/assets/2ccb66ce-1977-470e-bc80-330591bd5d05" />
 
 Launch With Words is a product that combines the features of a business coach with blogging prompts to encourage you to publish once a month. Follow the prompts. Publish. Easy!
 
