@@ -26,7 +26,7 @@ Install the plugin. Activate it. Verify the drafts are on board. Deactivate it. 
 
 After you install this importer, go get the starter pack here.
 
-https://bridgetwillard.com/downloads/launch-with-words-starter-content-pack/
+https://launchwithwords.com/shop/
 
 * After you activate the Importer Plugin, click the Import Tab.
 * Choose the json file from “LWW-Starter-Pack.”
@@ -35,7 +35,7 @@ https://bridgetwillard.com/downloads/launch-with-words-starter-content-pack/
 
 :nerd_face:
 
-If you have a feature request, <a href="https://github.com/MediaRon/launch-with-words/issues">please add a GitHub issue</a>. Thank you!
+If you have a feature request, <a href="https://github.com/ronalfy/launch-with-words/issues">please add a GitHub issue</a>. Thank you!
 
 :partying_face:
 
