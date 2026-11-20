@@ -83,13 +83,11 @@ class Settings_Page {
 			<?php
 			$tabs = array();
 			/**
-			 * Filer the output of the tab output.
-			 *
-			 * Potentially modify or add your own tabs.
+			 * Filters the admin tabs.
 			 *
 			 * @since 1.0.0
 			 *
-			 * @param array $tabs Associative array of tabs.
+			 * @param array $tabs Admin tabs.
 			 */
 			$tabs       = apply_filters( 'lww_admin_tabs', $tabs );
 			$tab_html   = '<nav class="nav-tab-wrapper">';
@@ -144,15 +142,13 @@ class Settings_Page {
 				$current_sub_tab = Functions::get_admin_sub_tab();
 
 				/**
-				 * Filer the output of the sub-tab output.
-				 *
-				 * Potentially modify or add your own sub-tabs.
+				 * Filters the admin sub-tabs.
 				 *
 				 * @since 1.0.0
 				 *
-				 * @param array Associative array of tabs.
-				 * @param string Tab
-				 * @param string Sub Tab
+				 * @param array       $sub_tabs        Sub-tabs for the current view.
+				 * @param string|null $current_tab     Current tab slug.
+				 * @param string|null $current_sub_tab Current sub-tab slug.
 				 */
 				$sub_tabs = apply_filters( 'lww_admin_sub_tabs', array(), $current_tab, $current_sub_tab );
 
@@ -209,14 +205,12 @@ class Settings_Page {
 					}
 					if ( $do_subtab_action ) {
 						/**
-						 * Perform a sub tab action.
+						 * Fires for the active admin sub-tab.
 						 *
-						 * Perform a sub tab action. Useful for loading scripts or inline styles as necessary.
+						 * The dynamic portion of the hook name, `$current_tab` and `$current_sub_tab`,
+						 * refers to the sanitized tab slugs: `lww_admin_sub_tab_{current_tab}_{current_sub_tab}`.
 						 *
 						 * @since 1.0.0
-						 *
-						 * lww_admin_sub_tab_{current_tab}_{current_sub_tab}
-						 * @param string Sub Tab
 						 */
 						do_action(
 							sprintf( // phpcs:ignore
@@ -230,15 +224,14 @@ class Settings_Page {
 				if ( $do_action ) {
 
 					/**
-					 * Perform a tab action.
+					 * Fires for the active admin tab.
 					 *
-					 * Perform a tab action.
+					 * The dynamic portion of the hook name is the tab callback, such as `lww_output_home`.
 					 *
 					 * @since 1.0.0
 					 *
-					 * @param string $action Can be any action.
-					 * @param string Tab
-					 * @param string Sub Tab
+					 * @param string|null $current_tab     Current tab slug.
+					 * @param string|null $current_sub_tab Current sub-tab slug.
 					 */
 					do_action( $do_action, $current_tab, $current_sub_tab );
 				}

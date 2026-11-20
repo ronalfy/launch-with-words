@@ -7,7 +7,7 @@
 
 namespace LWW\Includes\Templates;
 
-use LWW\Includes\Functions as Functions;
+use LWW\Includes\Functions;
 
 /**
  * Output the home tab and content.
@@ -44,12 +44,10 @@ class Home {
 	 * Add the home main tab and callback actions.
 	 *
 	 * @param array  $tabs        Array of tabs.
-	 * @param string $current_tab The current tab selected.
-	 * @param string $sub_tab     The current sub-tab selected.
 	 *
 	 * @return array of tabs.
 	 */
-	public function add_home_main_sub_tab( $tabs, $current_tab, $sub_tab ) {
+	public function add_home_main_sub_tab( $tabs ) {
 		return $tabs;
 	}
 
@@ -88,8 +86,7 @@ class Home {
 							<li><a href="https://wordpress.org/plugins/launch-with-words/" target="_blank" rel="noopener"><?php esc_html_e( 'Version:', 'launch-with-words' ); ?> <?php echo esc_html( LWW_VERSION ); ?></a></li>
 							<li><?php esc_html_e( 'Like Launch With Words?', 'launch-with-words' ); ?> <a href="https://wordpress.org/support/plugin/launch-with-words/reviews/" target="_blank" rel="noopener"><?php esc_html_e( 'Please rate us on the WordPress plugin directory.', 'launch-with-words' ); ?></a>
 							<li><?php esc_html_e( 'Need help?', 'launch-with-words' ); ?> <a href="https://wordpress.org/support/plugin/launch-with-words/" target="_blank" rel="noopener"><?php esc_html_e( 'Leave us a support request.', 'launch-with-words' ); ?></a></li>
-							<li><?php esc_html_e( 'Content Packs:', 'launch-with-words' ); ?> <a href="https://bridgetwillard.com/downloads/launch-with-words-starter-content-pack/" target="_blank" rel="noopener"><?php esc_html_e( 'Download a free starter pack.', 'launch-with-words' ); ?></a></li>
-							<li><?php esc_html_e( 'Podcast:', 'launch-with-words' ); ?> <a href="https://launch-with-words.castos.com/" target="_blank" rel="noopener"><?php esc_html_e( 'Listen to the Launch With Words Podcast', 'launch-with-words' ); ?></li>							
+							<li><?php esc_html_e( 'Content Packs:', 'launch-with-words' ); ?> <a href="https://launchwithwords.com/" target="_blank" rel="noopener"><?php esc_html_e( 'Download a free starter pack.', 'launch-with-words' ); ?></a></li>						
 						</ul>
 					</div>
 				</div>

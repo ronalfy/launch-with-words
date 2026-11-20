@@ -28,7 +28,7 @@ class Functions {
 				$options_url = add_query_arg( array( 'subtab' => sanitize_title( $sub_tab ) ), $options_url );
 			}
 		}
-		return $options_url;
+		return esc_url_raw( $options_url );
 	}
 
 	/**
@@ -69,8 +69,6 @@ class Functions {
 		 *
 		 * @param string $path     Relative path to SVG folder.
 		 * @param string $svg_slug Slug/filename of the SVG to load.
-		 *
-		 * @return string SVG Html or empty string.
 		 */
 		$svg_dir  = apply_filters( 'lww_load_svg_path', '/svgs/', $svg_slug );
 		$svg_file = self::get_plugin_dir( $svg_dir . $svg_slug . '.svg' );
@@ -96,7 +94,7 @@ class Functions {
 	/**
 	 * Get the current admin tab.
 	 *
-	 * @return null|string Current admin tab.
+	 * @return string|null Current admin tab.
 	 */
 	public static function get_admin_tab() {
 		$tab = filter_input( INPUT_GET, 'tab', FILTER_DEFAULT );
@@ -109,7 +107,7 @@ class Functions {
 	/**
 	 * Get the current admin sub-tab.
 	 *
-	 * @return null|string Current admin sub-tab.
+	 * @return string|null Current admin sub-tab.
 	 */
 	public static function get_admin_sub_tab() {
 		$tab = filter_input( INPUT_GET, 'tab', FILTER_DEFAULT );
@@ -143,7 +141,7 @@ class Functions {
 	/**
 	 * Return the version for the plugin.
 	 *
-	 * @return float version for the plugin.
+	 * @return string Plugin version.
 	 */
 	public static function get_plugin_version() {
 		return LWW_VERSION;
@@ -162,7 +160,7 @@ class Functions {
 		 *
 		 * @since 1.0.0
 		 *
-		 * @param string Plugin name.
+		 * @param string $name Plugin name.
 		 */
 		return apply_filters( 'lww_plugin_name', __( 'Launch With Words', 'launch-with-words' ) );
 	}
@@ -178,7 +176,7 @@ class Functions {
 		 *
 		 * @since 1.0.0
 		 *
-		 * @param string Plugin URI.
+		 * @param string $uri Plugin URI.
 		 */
 		return apply_filters( 'lww_plugin_uri', 'https://launchwithwords.com' );
 	}
@@ -194,7 +192,7 @@ class Functions {
 		 *
 		 * @since 1.0.0
 		 *
-		 * @param string Plugin Menu Name.
+		 * @param string $menu_name Plugin menu name.
 		 */
 		return apply_filters( 'lww_plugin_menu_name', __( 'Launch With Words', 'launch-with-words' ) );
 	}
@@ -210,7 +208,7 @@ class Functions {
 		 *
 		 * @since 1.0.0
 		 *
-		 * @param string Plugin Menu Name.
+		 * @param string $title Plugin title.
 		 */
 		return apply_filters( 'lww_plugin_menu_title', self::get_plugin_name() );
 	}
@@ -219,6 +217,7 @@ class Functions {
 	 * Returns appropriate html for KSES.
 	 *
 	 * @param bool $svg Whether to add SVG data to KSES.
+	 * @return array Allowed HTML for wp_kses().
 	 */
 	public static function get_kses_allowed_html( $svg = true ) {
 		$allowed_tags = wp_kses_allowed_html();
@@ -311,4 +310,3 @@ class Functions {
 		return $highest_priority;
 	}
 }
-

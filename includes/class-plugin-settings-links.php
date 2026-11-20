@@ -35,8 +35,8 @@ class Plugin_Settings_Links {
 	 *
 	 * @see run
 	 *
-	 * @param array $links Array of plugin options.
-	 * @return array $links Array of plugin options
+	 * @param array $links Plugin action links.
+	 * @return array Plugin action links.
 	 */
 	public function add_settings_link( $links ) {
 		$settings_url = admin_url( 'edit.php?page=launch-with-words' );
@@ -64,14 +64,13 @@ class Plugin_Settings_Links {
 				wp_safe_redirect( $settings_url );
 				exit;
 			}
-			
 		}
 	}
 
 	/**
 	 * Determine if a user can be redirected or not.
 	 *
-	 * @return true if the user can be redirected. false if not.
+	 * @return bool Whether the user can be redirected.
 	 */
 	public static function can_redirect_on_activation() {
 		// If plugin is activated in network admin options, skip redirect.
@@ -98,6 +97,6 @@ class Plugin_Settings_Links {
 	 * Set an option upon activation so we can retrieve it later.
 	 */
 	public static function plugin_activate() {
-		add_option( 'launch-with-words-activate', plugin_basename( LWW_FILE ) );
+		add_option( 'launch-with-words-activate', plugin_basename( LWW_FILE ), '', 'no' );
 	}
 }
