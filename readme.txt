@@ -9,7 +9,7 @@ Requires PHP: 7.4
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
-Launch With Words helps small businesses blog effortlessly with expert-crafted prompts. Just follow, publish, and become a copywriter—blogging made easy!
+Launch With Words helps small businesses blog effortlessly with expert-crafted prompts. Just follow, publish, and become a copywriter/expert blogger.
 
 == Description ==
 
