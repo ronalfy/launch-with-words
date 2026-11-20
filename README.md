@@ -1,4 +1,4 @@
-<img width="270" height="270" alt="image" src="https://github.com/user-attachments/assets/2ccb66ce-1977-470e-bc80-330591bd5d05" />
+<img width="1544" height="500" alt="banner-1544x500" src="https://github.com/user-attachments/assets/22224615-2daa-4fc1-9d1d-76efb51a0109" />
 
 Launch With Words is a product that combines the features of a business coach with blogging prompts to encourage you to publish once a month. Follow the prompts. Publish. Easy!
 
