@@ -1,0 +1,114 @@
+{
+    "preferredVersions": {
+        "php": "8.3",
+        "wp": "latest"
+    },
+    "features": {
+        "networking": true
+    },
+    "landingPage": "/",
+    "steps": [
+        {
+            "step": "login",
+            "username": "admin",
+            "password": "password"
+        },
+        {
+            "step": "setSiteOptions",
+            "options": {
+                "blogname": "Launch With Words Demo",
+                "blogdescription": "Launch With Words helps small businesses blog effortlessly with expert-crafted prompts.",
+                "timezone_string": "",
+                "gmt_offset": "0",
+                "date_format": "F j, Y",
+                "time_format": "g:i a",
+                "start_of_week": "1",
+                "permalink_structure": "/%postname%/",
+                "category_base": "",
+                "tag_base": "",
+                "default_comment_status": "open",
+                "default_ping_status": "open",
+                "comment_moderation": "1",
+                "comment_previously_approved": "1",
+                "comment_max_links": "2",
+                "moderation_keys": "",
+                "disallowed_keys": "",
+                "comment_registration": "",
+                "require_name_email": "1",
+                "show_comments_cookies_opt_in": "1",
+                "thread_comments": "1",
+                "thread_comments_depth": "5",
+                "page_comments": "",
+                "comments_per_page": "50",
+                "default_comments_page": "newest",
+                "comment_order": "asc",
+                "close_comments_for_old_posts": "1",
+                "close_comments_days_old": "1",
+                "show_avatars": "1",
+                "avatar_rating": "G",
+                "avatar_default": "mystery",
+                "thumbnail_size_w": "150",
+                "thumbnail_size_h": "150",
+                "thumbnail_crop": "1",
+                "medium_size_w": "300",
+                "medium_size_h": "300",
+                "medium_large_size_w": "768",
+                "medium_large_size_h": "0",
+                "large_size_w": "1024",
+                "large_size_h": "1024",
+                "uploads_use_yearmonth_folders": "1"
+            }
+        },
+        {
+            "step": "installTheme",
+            "themeData": {
+                "resource": "wordpress.org/themes",
+                "slug": "twentytwentyfive"
+            },
+            "options": {
+                "activate": true
+            }
+        },
+        {
+            "step": "installPlugin",
+            "pluginData": {
+                "resource": "wordpress.org/plugins",
+                "slug": "launch-with-words"
+            },
+            "options": {
+                "activate": true
+            }
+        },
+        {
+            "step": "installPlugin",
+            "pluginData": {
+                "resource": "wordpress.org/plugins",
+                "slug": "wp-plugin-info-card"
+            },
+            "options": {
+                "activate": true
+            }
+        },
+        {
+            "step": "importWxr",
+            "file": {
+                "resource": "url",
+                "url": "https://raw.githubusercontent.com/ronalfy/launch-with-words/refs/heads/main/blueprint.xml"
+            },
+            "rewriteUrls": true,
+            "fetchAttachments": true,
+            "authorsMap": {
+                "ronalfy": "admin"
+            },
+            "defaultAuthorUsername": "admin"
+        },
+        {
+            "step": "runPHP",
+            "code": "<?php require '/wordpress/wp-load.php'; $page = get_page_by_path( 'front-page', OBJECT, 'page' ); if ( $page instanceof WP_Post ) { update_option( 'page_on_front', (int) $page->ID ); update_option( 'show_on_front', 'page' ); }"
+        },
+        {
+            "step": "runPHP",
+            "code": "<?php require '/wordpress/wp-load.php'; update_option( 'theme_mods_twentytwentyfive', maybe_unserialize( 'a:1:{s:18:\"custom_css_post_id\";i:-1;}' ) ); update_option( 'sidebars_widgets', maybe_unserialize( 'a:4:{s:19:\"wp_inactive_widgets\";a:0:{}s:9:\"sidebar-1\";a:3:{i:0;s:7:\"block-2\";i:1;s:7:\"block-3\";i:2;s:7:\"block-4\";}s:9:\"sidebar-2\";a:2:{i:0;s:7:\"block-5\";i:1;s:7:\"block-6\";}s:13:\"array_version\";i:3;}' ) ); update_option( 'widget_archives', maybe_unserialize( 'a:1:{s:12:\"_multiwidget\";i:1;}' ) ); update_option( 'widget_block', maybe_unserialize( 'a:6:{i:2;a:1:{s:7:\"content\";s:19:\"<!-- wp:search /-->\";}i:3;a:1:{s:7:\"content\";s:154:\"<!-- wp:group --><div class=\"wp-block-group\"><!-- wp:heading --><h2>Recent Posts</h2><!-- /wp:heading --><!-- wp:latest-posts /--></div><!-- /wp:group -->\";}i:4;a:1:{s:7:\"content\";s:227:\"<!-- wp:group --><div class=\"wp-block-group\"><!-- wp:heading --><h2>Recent Comments</h2><!-- /wp:heading --><!-- wp:latest-comments {\"displayAvatar\":false,\"displayDate\":false,\"displayExcerpt\":false} /--></div><!-- /wp:group -->\";}i:5;a:1:{s:7:\"content\";s:146:\"<!-- wp:group --><div class=\"wp-block-group\"><!-- wp:heading --><h2>Archives</h2><!-- /wp:heading --><!-- wp:archives /--></div><!-- /wp:group -->\";}i:6;a:1:{s:7:\"content\";s:150:\"<!-- wp:group --><div class=\"wp-block-group\"><!-- wp:heading --><h2>Categories</h2><!-- /wp:heading --><!-- wp:categories /--></div><!-- /wp:group -->\";}s:12:\"_multiwidget\";i:1;}' ) ); update_option( 'widget_calendar', maybe_unserialize( 'a:1:{s:12:\"_multiwidget\";i:1;}' ) ); update_option( 'widget_categories', maybe_unserialize( 'a:0:{}' ) ); update_option( 'widget_custom_html', maybe_unserialize( 'a:1:{s:12:\"_multiwidget\";i:1;}' ) ); update_option( 'widget_media_audio', maybe_unserialize( 'a:1:{s:12:\"_multiwidget\";i:1;}' ) ); update_option( 'widget_media_gallery', maybe_unserialize( 'a:1:{s:12:\"_multiwidget\";i:1;}' ) ); update_option( 'widget_media_image', maybe_unserialize( 'a:1:{s:12:\"_multiwidget\";i:1;}' ) ); update_option( 'widget_media_video', maybe_unserialize( 'a:1:{s:12:\"_multiwidget\";i:1;}' ) ); update_option( 'widget_meta', maybe_unserialize( 'a:1:{s:12:\"_multiwidget\";i:1;}' ) ); update_option( 'widget_nav_menu', maybe_unserialize( 'a:1:{s:12:\"_multiwidget\";i:1;}' ) ); update_option( 'widget_pages', maybe_unserialize( 'a:1:{s:12:\"_multiwidget\";i:1;}' ) ); update_option( 'widget_recent-comments', maybe_unserialize( 'a:1:{s:12:\"_multiwidget\";i:1;}' ) ); update_option( 'widget_recent-posts', maybe_unserialize( 'a:1:{s:12:\"_multiwidget\";i:1;}' ) ); update_option( 'widget_rss', maybe_unserialize( 'a:0:{}' ) ); update_option( 'widget_search', maybe_unserialize( 'a:1:{s:12:\"_multiwidget\";i:1;}' ) ); update_option( 'widget_tag_cloud', maybe_unserialize( 'a:1:{s:12:\"_multiwidget\";i:1;}' ) ); update_option( 'widget_text', maybe_unserialize( 'a:0:{}' ) ); ?>"
+        }
+    ]
+}
