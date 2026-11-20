@@ -64,7 +64,7 @@ class Home {
 						<div class="notice-info notice info">
 							<p>
 								<strong>
-									<a href="https://bridgetwillard.com/launch-with-words-premium/" target="_blank" rel="noopener">
+									<a href="https://launchwithwords.com/shop/" target="_blank" rel="noopener">
 										<?php
 										esc_html_e( 'Download a free Starter Pack', 'launch-with-words' );
 										?>
